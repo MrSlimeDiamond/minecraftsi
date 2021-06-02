@@ -59,6 +59,11 @@ if [ $choice == "Paper" ]; then
         "1.15.2"    ""  \
         "1.14.4"    ""  \
         "1.13.2"    "" \
+        "1.12.2"    "" \
+        "1.11.2"    "" \
+        "1.10.2"    "" \
+        "1.9.4"    "" \
+        "1.8"    "" \
         2> $tempfile
 choice=`cat $tempfile`
 selectDir
@@ -72,6 +77,34 @@ fi
 if [ $choice == "1.15.2" ]; then
   echo "Downloading 1.15.2 Paper jar..."
   curl -L https://papermc.io/api/v2/projects/paper/versions/1.15.2/builds/391/downloads/paper-1.15.2-391.jar > $directory/paper-1.15.2-391.jar
+fi
+if [ $choice == "1.14.4" ]; then
+  echo "Downloading 1.14.4 Paper jar..."
+  curl -L https://papermc.io/api/v2/projects/paper/versions/1.14.4/builds/243/downloads/paper-1.14.4-243.jar > $directory/paper-1.14.4-243.jar
+fi
+if [ $choice == "1.13.2" ]; then
+  echo "Downloading 1.13.2 Paper jar..."
+  curl -L https://papermc.io/api/v2/projects/paper/versions/1.13.2/builds/655/downloads/paper-1.13.2-655.jar > $directory/paper-1.13.2-655.jar
+fi
+if [ $choice == "1.12.2" ]; then
+  echo "Downloading 1.12.2 Paper jar..."
+  curl -L https://papermc.io/api/v2/projects/paper/versions/1.12.2/builds/1618/downloads/paper-1.12.2-1618.jar > $directory/paper-1.12.2-1618.jar
+fi
+if [ $choice == "1.11.2" ]; then
+  echo "Downloading 1.11.2 Paper jar..."
+  curl -L https://papermc.io/api/v2/projects/paper/versions/1.11.2/builds/1104/downloads/paper-1.11.2-1104.jar > $directory/paper-1.11.2-1104.jar
+fi
+if [ $choice == "1.10.2" ]; then
+  echo "Downloading 1.10.2 Paper jar..."
+  curl -L https://papermc.io/api/v2/projects/paper/versions/1.10.2/builds/916/downloads/paper-1.10.2-916.jar > $directory/paper-1.10.2-916.jar
+fi
+if [ $choice == "1.9.4" ]; then
+  echo "Downloading 1.9.4 Paper jar..."
+  curl -L https://papermc.io/api/v2/projects/paper/versions/1.9.4/builds/773/downloads/paper-1.9.4-773.jar > $directory/paper-1.9.4-773.jar
+fi
+if [ $choice == "1.8" ]; then
+  echo "Downloading 1.8.8 Paper jar..."
+  curl -L https://papermc.io/api/v2/projects/paper/versions/1.8.8/builds/443/downloads/paper-1.8.8-443.jar > $directory/paper-1.8.8-443.jar
 fi
 fi
 if [ $choice == "SpongeVanilla" ]; then
