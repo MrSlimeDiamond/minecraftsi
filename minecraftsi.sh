@@ -12,7 +12,7 @@ trapcmds(){
   rm -f $tempfile
   rm -f $tempfile2
 }
-title="Server install script version 2021.6.005"
+title="Server install script version 2021.6.007"
 selectDir(){
       $DIALOG --backtitle "$title" \
     --title "Directory path" \
