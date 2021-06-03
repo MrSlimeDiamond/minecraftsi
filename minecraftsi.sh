@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 DIALOG=${DIALOG=dialog}
 tempfile=`tempfile 2>/dev/null` || tempfile=/tmp/test$$
 trap "rm -f $tempfile" 0 1 2 5 15
@@ -10,7 +10,7 @@ trap "exit" trapcmds
 
 trapcmds(){
   rm -f $tempfile
-  rm -rf 
+  rm -f $tempfile2
 }
 title="Server install script version 2021.6.005"
 selectDir(){
@@ -193,6 +193,25 @@ if [ $choice == "Vanilla" ]; then
         echo "Downloading vanilla 1.7.10 jar"
         curl -L https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar > $directory/server-1.7.10.jar
       fi
+fi
+if [ $choice == "Spigot" ]; then
+      $DIALOG --backtitle "$title" \
+	--title "Select Version" --clear \
+        --menu "Use space and arrow keys" 20 61 5 \
+        "1.16.5"  "Latest"  \
+        "1.15.2"    ""  \
+        "1.14.4"    ""  \
+        "1.13.2"    "" \
+        "1.12.2"    "" \
+        "1.11.2"    "" \
+        "1.10.2"    "" \
+        "1.9.4"    "" \
+        "1.8"    "" \
+        2> $tempfile
+        version=`cat $tempfile`
+        selectDir
+      echo "Attempting to download $version Spigot jar"
+      curl -L https://cdn.getbukkit.org/spigot/spigot-$version.jar > $directory/spigot-$version.jar
 fi
 eulaNotice
 
