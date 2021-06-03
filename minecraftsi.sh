@@ -109,9 +109,90 @@ fi
 fi
 if [ $choice == "SpongeVanilla" ]; then
       $DIALOG --backtitle "$title" \
-	--title "Select Version" --clear \
+	      --title "Select Version" --clear \
         --menu "Use space and arrow keys" 20 61 5 \
-        "1.12.2" "" # ill do this later, ok?
+        "1.12.2" "" \
+        "1.11.2" "" \
+        "1.10.2" "" \
+        "1.8.9" "" \
+        "1.8" "" \
+        2> $tempfile
+      version=`cat $tempfile`
+      selectDir
+      if [ $version == "1.12.2" ]; then
+        echo "Downloading 1.12.2 Sponge jar"
+        curl -L https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/1.12.2-7.3.0/spongevanilla-1.12.2-7.3.0.jar > $directory/spongevanilla-1.12.2-7.3.0.jar
+      fi
+      if [ $version == "1.11.2" ]; then
+        echo "Downloading 1.11.2 Sponge jar"
+        curl -L https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/1.11.2-6.1.0-BETA-27/spongevanilla-1.11.2-6.1.0-BETA-27.jar > $directory/spongevanilla-1.11.2-6.1.0-BETA-27.jar
+      fi
+      if [ $version == "1.10.2" ]; then
+        echo "Downloading 1.10.2 Sponge jar"
+        curl -L https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/1.10.2-5.2.0-BETA-403/spongevanilla-1.10.2-5.2.0-BETA-403.jar > $directory/spongevanilla-1.10.2-5.2.0-BETA-403.jar
+      fi    
+      if [ $version == "1.8.9" ]; then
+        echo "Downloading 1.8.9 Sponge jar"
+        curl -L https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/1.8.9-4.2.0-BETA-352/spongevanilla-1.8.9-4.2.0-BETA-352.jar > $directory/spongevanilla-1.8.9-4.2.0-BETA-352.jar
+      fi    
+fi
+if [ $choice == "Vanilla" ]; then
+      $DIALOG --backtitle "$title" \
+	      --title "Select Version" --clear \
+        --menu "Use space and arrow keys" 20 61 5 \
+        "1.16.5/1.16.4" "Latest" \
+        "1.15.2" "" \
+        "1.14.4" "" \
+        "1.13.2" "" \
+        "1.12.2" "" \
+        "1.11.2" "" \
+        "1.10.2" "" \
+        "1.9.4" "" \
+        "1.8.8" "" \
+        "1.7.10" "" \
+        2> $tempfile
+      version=`cat $tempfile`
+      selectDir
+      if [ $version == "1.16.5/1.16.4" ]; then
+        echo "Downloading vanilla 1.16.5 jar"
+        curl -L https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar > $directory/server-1.16.5.jar
+      fi
+      if [ $version == "1.15.2" ]; then
+        echo "Downloading vanilla 1.15.2 jar"
+        curl -L https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar > $directory/server-1.15.2.jar
+      fi
+      if [ $version == "1.14.4" ]; then
+        echo "Downloading vanilla 1.14.4 jar"
+        curl -L https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar > $directory/server-1.14.4.jar
+      fi
+      if [ $version == "1.13.2" ]; then
+        echo "Downloading vanilla 1.13.2 jar"
+        curl -L https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar > $directory/server-1.13.2.jar
+      fi
+      if [ $version == "1.12.2" ]; then
+        echo "Downloading vanilla 1.12.2 jar"
+        curl -L https://launcher.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar > $directory/server-1.12.2.jar
+      fi
+      if [ $version == "1.11.2" ]; then
+        echo "Downloading vanilla 1.11.2 jar"
+        curl -L https://launcher.mojang.com/v1/objects/f00c294a1576e03fddcac777c3cf4c7d404c4ba4/server.jar > $directory/server-1.11.2.jar
+      fi
+      if [ $version == "1.10.2" ]; then
+        echo "Downloading vanilla 1.10.2 jar"
+        curl -L https://launcher.mojang.com/v1/objects/3d501b23df53c548254f5e3f66492d178a48db63/server.jar > $directory/server-1.10.2.jar
+      fi
+      if [ $version == "1.9.4" ]; then
+        echo "Downloading vanilla 1.9.4 jar"
+        curl -L https://launcher.mojang.com/v1/objects/edbb7b1758af33d365bf835eb9d13de005b1e274/server.jar > $directory/server-1.9.4.jar
+      fi
+      if [ $version == "1.8.8" ]; then
+        echo "Downloading vanilla 1.8.8 jar"
+        curl -L https://launcher.mojang.com/v1/objects/5fafba3f58c40dc51b5c3ca72a98f62dfdae1db7/server.jar > $directory/server-1.8.8.jar
+      fi
+      if [ $version == "1.7.10" ]; then
+        echo "Downloading vanilla 1.7.10 jar"
+        curl -L https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar > $directory/server-1.7.10.jar
+      fi
 fi
 eulaNotice
 
