@@ -12,7 +12,7 @@ trapcmds(){
   rm -f $tempfile
   rm -f $tempfile2
 }
-title="Server install script version 2021.6.007"
+title="Server install script version 2021.6.008"
 selectDir(){
       $DIALOG --backtitle "$title" \
     --title "Directory path" \
@@ -42,7 +42,6 @@ $DIALOG --backtitle "$title" \
         --menu "Use space and arrow keys" 0 0 0 \
         "Paper"  "Recommended" \
         "Spigot"    ""  \
-        "CanaryMod" "Discontinued"  \
         "SpongeVanilla"    ""  \
         "Purpur" "" \
         "Vanilla"       ""   2> $tempfile
@@ -140,7 +139,8 @@ if [ $choice == "Vanilla" ]; then
       $DIALOG --backtitle "$title" \
 	      --title "Select Version" --clear \
         --menu "Use space and arrow keys" 20 61 5 \
-        "1.16.5/1.16.4" "Latest" \
+        "1.17" "Latest" \
+        "1.16.5/1.16.4" "" \
         "1.15.2" "" \
         "1.14.4" "" \
         "1.13.2" "" \
@@ -192,6 +192,10 @@ if [ $choice == "Vanilla" ]; then
       if [ $version == "1.7.10" ]; then
         echo "Downloading vanilla 1.7.10 jar"
         curl -L https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar > $directory/server-1.7.10.jar
+      fi
+      if [ $version == "1.17" ]; then
+        echo "Downloading vanilla 1.17 jar"
+        curl -L https://launcher.mojang.com/v1/objects/0a269b5f2c5b93b1712d0f5dc43b6182b9ab254e/server.jar > $directory/server-1.17.jar
       fi
 fi
 if [ $choice == "Spigot" ]; then
