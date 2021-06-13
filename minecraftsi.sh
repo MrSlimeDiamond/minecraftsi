@@ -202,7 +202,8 @@ if [ $choice == "Spigot" ]; then
       $DIALOG --backtitle "$title" \
 	--title "Select Version" --clear \
         --menu "Use space and arrow keys" 20 61 5 \
-        "1.16.5"  "Latest"  \
+	"1.17" "Latest" \
+        "1.16.5"  ""  \
         "1.15.2"    ""  \
         "1.14.4"    ""  \
         "1.13.2"    "" \
