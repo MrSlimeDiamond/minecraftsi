@@ -9,5 +9,5 @@ Simple Minecraft Server Install Script (Linux)
 
 or
 
-- Run script with `sh -c "$(curl -fsSL https://raw.githubusercontent.com/MrSlimeDiamond/minecraftsi/main/minecraftsi.sh)"` or `bash -c "$(curl -fsSL https://raw.githubusercontent.com/MrSlimeDiamond/minecraftsi/main/minecraftsi.sh)"`
+- Run script with `bash -c "$(curl -fsSL https://raw.githubusercontent.com/MrSlimeDiamond/minecraftsi/main/minecraftsi.sh)"`
 - You might have to install the `dialog` package to use.
