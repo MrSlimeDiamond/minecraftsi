@@ -12,4 +12,4 @@ Run script with `bash -c "$(curl -fsSL https://raw.githubusercontent.com/MrSlime
 
 ## Requirements
 
-- `dialog` - installable from apt and yum
+- `dialog` - installable from your package manager
